@@ -1,0 +1,11 @@
+.main {
+  /*не забыть убрать высоту*/
+  height: 900px;
+  background: linear-gradient(
+                  180deg,
+                  rgba(0, 0, 0, 0.3) 0%,
+                  rgba(70, 70, 70, 0.3) 27.57%,
+                  rgba(255, 255, 255, 0.3) 100%
+  ),
+  url("../static/images/main_bg_image.png") center/cover no-repeat;
+}
