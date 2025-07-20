@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.swiper {
+  overflow: visible;
+
+  @include mobile-above {
+      display: none !important;
+  }
+
+  &-slide {
+    padding-block: rem(15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-navigations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-button {
+    position: static;
+    display: flex;
+    align-items: center;
+    column-gap: rem(5);
+    margin-top: 0;
+    width: auto;
+    color: var(--color-light);
+
+    &:after {
+      display: none;
+    }
+
+    &-arrow {
+      height: rem(24);
+    }
+  }
+}
+

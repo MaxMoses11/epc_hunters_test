@@ -1,11 +1,32 @@
+@use '../helpers' as *;
+
 .main {
-  /*не забыть убрать высоту*/
-  height: 900px;
   background: linear-gradient(
                   180deg,
-                  rgba(0, 0, 0, 0.3) 0%,
-                  rgba(70, 70, 70, 0.3) 27.57%,
-                  rgba(255, 255, 255, 0.3) 100%
+                  rgba(0, 0, 0, 0.2) 0%,
+                  rgba(70, 70, 70, 0.2) 27.57%,
+                  rgba(255, 255, 255, 0.2) 100%
   ),
-  url("../static/images/main_bg_image.png") center/cover no-repeat;
+  url("../static/images/main_bg_image.png") right/cover no-repeat;
+
+  @include mobile-s {
+    background: linear-gradient(
+                            179deg,
+                            rgba(0, 0, 0, 0.3) 0%,
+                            rgba(70, 70, 70, 0.3) 16.13%,
+                            rgba(255, 255, 255, 0.3) 100%
+    ),
+    url("../static/images/main_bg_image--mob.png") center/cover no-repeat;
+  }
+
+  &__overlay {
+    display: contents;
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-dark);
+    opacity: 0.56;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
 }

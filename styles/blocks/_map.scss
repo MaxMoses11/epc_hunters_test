@@ -1,0 +1,11 @@
+@use '../helpers' as *;
+
+.map {
+  position: relative;
+  margin-block: rem(58) rem(64);
+  height: rem(432);
+
+  @include mobile {
+    display: none;
+  }
+}

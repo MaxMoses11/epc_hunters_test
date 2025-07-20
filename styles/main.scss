@@ -5,25 +5,11 @@
 @use 'globals';
 
 @use "blocks/main-block";
-
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-
-
-.header__inner {
-    padding-block: 40px;
-    display: flex;
-    align-items: center;
-    column-gap: 52px;
-    width: 100%;
-}
-
-.header__contain {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
+@use "blocks/header";
+@use "blocks/burger-button";
+@use "blocks/content";
+@use "blocks/map";
+@use "blocks/map-item";
+@use "blocks/swiper";
+@use "blocks/modal";
+@use "blocks/popup";

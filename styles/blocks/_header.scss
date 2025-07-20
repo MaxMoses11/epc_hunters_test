@@ -1,0 +1,112 @@
+@use "../helpers" as *;
+
+.header {
+  &__inner {
+    padding-block: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(52);
+    width: 100%;
+
+    @include mobile {
+      &:has(.header__contain.is-active) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          'logo burger'
+          'contain contain';
+        row-gap: rem(20);
+        background-color: var(--color-light);
+        transition-duration: var(--transition-duration);
+      }
+    }
+  }
+
+  &__logo {
+    @include fluid-text(32, 20);
+
+    flex-shrink: 0;
+    font-family: var(--font-family-base);
+    font-weight: 700;
+    line-height: .92;
+
+    @include mobile {
+      grid-area: logo;
+      color: var(--color-light-10);
+    }
+  }
+
+  &__contain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include mobile {
+      grid-area: contain;
+      color: var(--color-dark);
+      flex-direction: column;
+      row-gap: rem(35);
+
+      &:not(.is-active) {
+        @include visually-hidden;
+      }
+    }
+
+    &_link {
+      font-weight: 400;
+      line-height: 0.46;
+      text-transform: uppercase;
+      padding-bottom: rem(5);
+      border-bottom: rem(1) solid var(--color-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: rem(20);
+
+      @include mobile {
+        border-color: var(--color-dark);
+        column-gap: rem(50);
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(15)
+    }
+  }
+
+  &__burger-button {
+    @include mobile {
+      grid-area: burger;
+      justify-self: end;
+    }
+  }
+
+
+}
+
+html:has(.is-active) {
+  .main {
+    &__overlay {
+      display: block;
+    }
+  }
+
+  .header {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .content {
+    margin-top: fluid(139, 120);
+  }
+}

@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.burger-button {
+  @include square(rem(40));
+  @include flex-center;
+
+  position: relative;
+  color: var(--color-light);
+  background-color: transparent;
+  border: none;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &.is-active {
+    color: var(--color-dark);
+
+    .burger-button__icon {
+      &.not-active {
+        display: none;
+      }
+      &.active {
+        display: inline;
+      }
+    }
+
+    &:after {
+      @include abs-y;
+      content: 'Loren Ipsum';
+      font-size: rem(12);
+      line-height: 0.46;
+      right: calc(100% + 0.625rem);
+      width: rem(74);
+    }
+  }
+
+  &__icon {
+    &.not-active {
+      display: inline;
+      height: rem(22);
+    }
+    &.active {
+      display: none;
+      height: rem(19);
+    }
+  }
+}
